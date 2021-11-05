@@ -1,11 +1,13 @@
 import { useSelector } from "react-redux";
 
 export const Info2 = () => {
-  const {dataHistory} = useSelector(({movies}) => movies);
+  const {dataHistory, lastResponse} = useSelector(({movies}) => movies);
+
+  const info = [...dataHistory, lastResponse];
 
     return (                             // HISTORY
         <div>
-          {JSON.stringify(dataHistory)}
+          {JSON.stringify(info)}
         </div>
     );
 }
